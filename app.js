@@ -1,29 +1,19 @@
 let products = {
 	data: [
 		{
-			productName: 'Black Chair',
-			category: 'Chairs',
-			price: '1200',
-			image: './images/chair-001.webp',
-		},
-		{
 			productName: 'Wooden Chair',
 			category: 'Chairs',
 			price: '2500',
 			image: './images/chair-002.webp',
 		},
-		{
-			productName: 'Cozy white chair',
-			category: 'Chairs',
-			price: '1900',
-			image: './images/chair-003.webp',
-		},
+
 		{
 			productName: 'Cozy beige chair',
 			category: 'Chairs',
 			price: '3500',
 			image: './images/chair-004.webp',
 		},
+
 		{
 			productName: 'Wooden night table',
 			category: 'Night-Tables',
@@ -49,10 +39,22 @@ let products = {
 			image: './images/ntable-0022.webp',
 		},
 		{
+			productName: 'Cozy white chair',
+			category: 'Chairs',
+			price: '1900',
+			image: './images/chair-003.webp',
+		},
+		{
 			productName: 'Candle set',
 			category: 'Candles',
 			price: '129',
 			image: './images/candles-001.webp',
+		},
+		{
+			productName: 'Black Chair',
+			category: 'Chairs',
+			price: '1200',
+			image: './images/chair-001.webp',
 		},
 		{
 			productName: 'Bulb candle set',
@@ -159,6 +161,32 @@ function filterProduct(value) {
 		}
 	});
 }
+
+//Search function
+
+const searchItem = () => {
+	//initializations
+	let searchInput = document.getElementById('search-input').value;
+	let elements = document.querySelectorAll('.product-name');
+	let cards = document.querySelectorAll('.card');
+	//loop through all elements
+	elements.forEach((element, index) => {
+		//check if text includes the search value
+		if (element.innerText.includes(searchInput.toUpperCase())) {
+			//display matching card
+			cards[index].classList.remove('hide');
+		} else {
+			//hide others
+			cards[index].classList.add('hide');
+		}
+	});
+};
+
+document.getElementById('search').addEventListener('click', searchItem);
+document.getElementById('search-input').addEventListener("keyup", function(e) {
+    if (e.key === 'Enter') {
+        searchItem();
+    }});
 
 //Initially display all products
 window.onload = () => {
