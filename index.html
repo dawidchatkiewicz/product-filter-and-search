@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product filter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="search-container">
+            <input type="search" id="search-input" placeholder="Wpisz nazwę produktu...">
+            <button id="search">Szukaj</button>
+        </div>
+        <div id="buttons">
+            <button class="button-value" onclick="filterProduct('all')">All</button>
+            <button class="button-value" onclick="filterProduct('Chairs')">Chairs</button>
+            <button class="button-value" onclick="filterProduct('Night-Tables')">Night-tables</button>
+            <button class="button-value" onclick="filterProduct('Candles')">Candles</button>
+            <button class="button-value" onclick="filterProduct('Lamps')">Lamps</button>
+        </div>
+        <div id="products"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
